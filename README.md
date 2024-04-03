@@ -20,20 +20,20 @@ Before running the Ansible playbooks, ensure that the following prerequisites ar
     ```
 
 2. Modify the configuration variables according to your requirements. The main configuration files are:
-    - `kvm.yml`: This playbook defines tasks for deploying VMs based on cloud images.
+    - `kvm_provision.yml`: This playbook defines tasks for deploying VMs based on cloud images.
     - `roles/kvm_provision/defaults/main.yml`: Default variables for VM provisioning such as VM names, CPU, RAM, network configuration, etc.
     - `roles/kvm_provision/tasks/main.yml`: Tasks for ensuring prerequisites and creating VMs.
     - `roles/kvm_provision/templates/vm-template.xml.j2`: XML template for defining VM configurations.
 
-3. Run the playbook `kvm.yml`:
+3. Run the playbook `kvm_provision.yml`:
 
     ```bash
-    ansible-playbook kvm.yml
+    ansible-playbook kvm_provision.yml
     ```
 
 ## Configuration Details
 
-- **kvm.yml**: This playbook contains tasks for deploying VMs based on cloud images. It includes roles for KVM provisioning.
+- **kvm_provision.yml**: This playbook contains tasks for deploying VMs based on cloud images. It includes roles for KVM provisioning.
 - **roles/kvm_provision/defaults/main.yml**: This file defines default variables used in KVM provisioning. You can customize VM names, CPU, RAM, network configuration, SSH keys, and other parameters here.
 - **roles/kvm_provision/tasks/main.yml**: Tasks file for KVM provisioning. It includes tasks for ensuring required packages are installed, getting a list of existing VMs, creating VMs, and cleaning up temporary files.
 - **roles/kvm_provision/templates/vm-template.xml.j2**: This Jinja2 template file defines the XML configuration for VMs. It includes settings for memory, CPU, disks, network interfaces, graphics, and other devices.
@@ -42,4 +42,4 @@ Before running the Ansible playbooks, ensure that the following prerequisites ar
 
 - Modify `roles/kvm_provision/defaults/main.yml` to change default VM configurations.
 - Update `roles/kvm_provision/templates/vm-template.xml.j2` for customizing VM settings such as disk size, CPU model, etc.
-- Adjust playbook `kvm.yml` if additional tasks or roles are required.
+- Adjust playbook `kvm_provision.yml` if additional tasks or roles are required.
