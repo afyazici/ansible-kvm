@@ -46,7 +46,7 @@ Before running the Ansible playbooks, ensure that the following prerequisites ar
 
 ## Contributors
 
-@c3ng0
+- [@c3ng0](https://github.com/c3ng0)
 
 ## License
 
