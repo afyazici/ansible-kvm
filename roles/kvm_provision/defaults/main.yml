@@ -1,0 +1,24 @@
+---
+# defaults file for kvm_provision
+base_image_name: Fedora-Cloud-Base-39-1.5.x86_64.qcow2
+base_image_url: https://ftp.linux.org.tr/fedora/releases/39/Cloud/x86_64/images/{{ base_image_name }}
+base_image_sha: ab5be5058c5c839528a7d6373934e0ce5ad6c8f80bd71ed3390032027da52f37
+libvirt_pool_dir: "/var/lib/libvirt/images"
+vm_names:
+  - ohoho1
+  - ohoho2
+  - ohoho3
+vm_vcpus: 1
+vm_ram_mb: 1024
+vm_net: default
+vm_root_pass: tor
+cleanup_tmp: no
+ssh_key: /root/.ssh/id_rsa.pub
+net_type: bridge
+net_name: virbr0
+net: default
+ssh_pub_key: "/home/c3ng0/.ssh/id_rsa.pub"
+pool_dir: "/var/lib/libvirt/images"
+vcpus: 1
+ram_mb: 1024
+cleanup: no

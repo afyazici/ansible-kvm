@@ -1,0 +1,26 @@
+# tasks file for kvm_provision
+- name: Ensure requirements in place
+  package:
+    name:
+      - guestfs-tools
+      - python3-libvirt
+    state: present
+  become: yes
+
+- name: Get VMs list
+  community.libvirt.virt:
+    command: list_vms
+  register: existing_vms
+  changed_when: no
+
+- name: Create VMs
+  ansible.builtin.include_tasks: create_vm.yml
+  loop: "{{ vm_names }}"
+  loop_control:
+    loop_var: vm_name
+
+- name: Ensure temporary file is deleted
+  file:
+    path: "/tmp/{{ base_image_name }}"
+    state: absent
+  when: cleanup_tmp | bool
