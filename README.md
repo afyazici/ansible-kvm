@@ -7,7 +7,7 @@ This repository contains Ansible roles and playbooks for provisioning virtual ma
 Before running the Ansible playbooks, ensure that the following prerequisites are met:
 
 - Ansible is installed on the control machine.
-- Required packages (`guestfs-tools` and `python3-libvirt`) are installed on the control machine.
+- Required packages (`libguestfs-tools` and `python3-libvirt`) are installed on the control machine.
 - Access to the KVM hypervisor.
 - Necessary permissions to create and manage VMs.
 
