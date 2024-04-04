@@ -17,7 +17,7 @@ ssh_key: /root/.ssh/id_rsa.pub
 net_type: bridge
 net_name: virbr0
 net: default
-ssh_pub_key: "/home/$USER/.ssh/id_rsa.pub"
+ssh_pub_key: "$HOME/.ssh/id_rsa.pub"
 pool_dir: "/var/lib/libvirt/images"
 vcpus: 1
 ram_mb: 1024
