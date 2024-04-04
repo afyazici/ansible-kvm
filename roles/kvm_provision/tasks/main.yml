@@ -2,7 +2,7 @@
 - name: Ensure requirements in place
   package:
     name:
-      - guestfs-tools
+      - libguestfs-tools
       - python3-libvirt
     state: present
   become: yes
